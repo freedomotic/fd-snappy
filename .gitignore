@@ -1,0 +1,5 @@
+#Ignore java and freedomotic folders#
+freedomotic
+jre
+*.snap
+
