@@ -1,0 +1,9 @@
+name: freedomotic
+architecture: [amd64, armhf]
+version: 5.6.0
+vendor: Freedomotic Team <info@freedomotic.com>
+icon: meta/freedomotic.svg
+binaries:
+ - name: bin/start.sh
+
+
