@@ -1,9 +1,12 @@
 name: freedomotic
-architecture: [amd64, armhf]
+architecture: armhf
 version: 5.6.0
 vendor: Freedomotic Team <info@freedomotic.com>
 icon: meta/freedomotic.svg
-binaries:
- - name: bin/start.sh
-
-
+services:
+ - name: freedomotic
+   description: "freedomotic runtime"
+   start: bin/start
+integration:
+    freedomotic:
+        apparmor: meta/freedomotic.apparmor
