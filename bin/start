@@ -6,5 +6,5 @@ cd $appdir
 export JAVA_HOME="/apps/freedomotic/current/jre"
 
 echo Launching Freedomotic runtime...
-$JAVA_HOME/bin/java -splash:${appdir}/splash.png -jar ${appdir}/freedomotic.jar 
+$JAVA_HOME/bin/java -splash:${appdir}/splash.png -jar ${appdir}/freedomotic/freedomotic.jar 
 	
