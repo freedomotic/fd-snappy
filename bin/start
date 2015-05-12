@@ -1,9 +1,8 @@
 #!/bin/sh
 
-appdir=/apps/freedomotic/current
-cd $appdir
-
-export JAVA_HOME="/apps/freedomotic/current/jre"
+appdir="$SNAP_APP_PATH"
+cd "$appdir"
+export JAVA_HOME="$appdir/jre"
 
 echo Launching Freedomotic runtime...
 $JAVA_HOME/bin/java -splash:${appdir}/splash.png -jar ${appdir}/freedomotic/freedomotic.jar 

@@ -7,6 +7,12 @@ services:
  - name: freedomotic
    description: "freedomotic runtime"
    start: bin/start
-integration:
-    freedomotic:
-        apparmor: meta/freedomotic.apparmor
+   caps:
+     - network-service
+binaries:
+ - name: start
+   exec: bin/start
+   description: "freedomotic runtime cli"
+   caps:
+     - network-service
+
