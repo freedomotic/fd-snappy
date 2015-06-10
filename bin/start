@@ -1,9 +1,19 @@
 #!/bin/sh
 
-appdir="$SNAP_APP_PATH"
-cd "$appdir"
+appdir=$SNAP_APP_PATH
+datadir=$SNAP_APP_USER_DATA_PATH
+
+cd $appdir
 export JAVA_HOME="$appdir/jre"
 
-echo Launching Freedomotic runtime...
-$JAVA_HOME/bin/java -splash:${appdir}/splash.png -jar ${appdir}/freedomotic/freedomotic.jar 
+
+if [ ! -d "${datadir}/freedomotic" ]; then
+  echo "Creating freedomotic folder to " ${datadir}
+  mkdir ${datadir}/freedomotic 
+  echo "Copying freedomotic folder to " ${datadir}/freedomotic
+  cp -r ${appdir}/freedomotic/* ${datadir}/freedomotic
+fi
+
+echo "Launching Freedomotic runtime..."
+$JAVA_HOME/bin/java -jar ${datadir}/freedomotic/freedomotic.jar 
 	
